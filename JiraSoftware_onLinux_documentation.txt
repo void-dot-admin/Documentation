@@ -1,0 +1,52 @@
+Install java-openjdk:
+
+$ sudo apt update
+$ java -version
+$ sudo apt install default-jre
+$ java -version
+$ sudo apt install default-jdk
+$ javac -version
+
+Install Mysql:
+
+$ sudo curl -OL https://dev.mysql.com/get/mysql-apt-config_0.8.24-1_all.deb
+$ ls -l
+$ sudo dpkg -i mysql-apt-config_0.8.24-1_all.deb
+$ sudo apt update
+$ sudo apt install mysql-server
+$ mysql -V
+$ sudo mysqladmin -u root -p version
+$ sudo mysql_secure_installation
+$ sudo systemctl status mysql
+
+Create DataBase & Install Jira Software:
+
+# mysql -u root -p
+
+CREATE DATABASE jira_db;
+CREATE USER 'jira_user'@'localhost' IDENTIFIED BY 'Void.admin100$';
+GRANT ALL PRIVILEGES ON jira_db.* TO 'jira_user'@'localhost';
+FLUSH PRIVILEGES;
+quit;
+
+switch to root user with "sudo -i"
+the $ should change to #
+
+# wget https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-8.20.15-x64.bin
+# chmod a+x atlassian-jira-software-8.20.15-x64.bin
+# ls -la (if appears in green is ok)
+# ./atlassian-jira-software-8.20.15-x64.bin -> Enter -> 2 -> Enter -> Enter -> 1 -> Y -> i -> Y
+# apt install ufw
+# ufw allow 8181
+# ufw allow 8005
+# ufw allow 8080
+# ufw enable
+# ufw status
+# wget https://dev.mysql.com/get/archives/mysql-connector-java-8.0/mysql-connector-java-8.0.30.zip
+# unzip mysql-connector-java-8.0.30.zip ( "apt install unzip" -  if you don't have it installed)
+
+Next, navigate into the  mysql-connector-java directory and copy the jar file to the path /opt/atlassian/jira/lib
+# cp mysql-connector-java-8.0.30.jar  /opt/atlassian/jira/lib
+# ls /opt/atlassian/jira/lib (check if the mysql .jar is there)
+# /etc/init.d/jira stop
+# /etc/init.d/jira start
