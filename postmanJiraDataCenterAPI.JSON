@@ -1,0 +1,22 @@
+// The Endpoint used in the Youtube video: http://localhost:8080/rest/api/2/issue/
+// use it as a POST
+
+{
+    "fields": {
+       "project":
+       {
+          "id": "10000" //project ID (found in Details)
+       },
+       "summary": "Request created via REST API from Postman",
+        "description": "TEST DESCRIPTION",
+        "components" : [ { "name": "Jira"} , { "name": "Youtube" } ],
+        "labels" : ["OneLabel"],
+        "customfield_10201" : { "value": "TikTok" }, //Task Choice custom field (single-select)
+        "customfield_10600" : [ { "value": "Jira" }, { "value": "GitHub" } ], //Tools custom field (multi-select)
+        "customfield_10601" : "Justification TEXT STRING", //text field
+        "customfield_10700" : [{"key" : "TESTITSM-10"}], //asset field
+       "issuetype": {
+          "id": "10002" //ID of the issue type
+       }
+   }
+}
