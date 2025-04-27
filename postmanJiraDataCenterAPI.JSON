@@ -1,5 +1,5 @@
 // The Endpoint used in the Youtube video: http://localhost:8080/rest/api/2/issue/
-// use it as a POST
+// use it as a POST 
 
 {
     "fields": {
