@@ -1,0 +1,12 @@
+// Endpoint used in the Youtube video: http://localhost:8080/rest/servicedeskapi/request
+// use it as a POST
+
+{
+    "serviceDeskId": "1", //ID of the service desk project
+    "requestTypeId": "8", //ID of the customer request type
+    "requestFieldValues": {
+        "customfield_10800" : { "name":"void.admin" }, //single user field
+        "customfield_10700" : [{"key" : "TESTITSM-10"}], //asset field
+        "description": "TEST Justification FROM API"
+    }
+}
