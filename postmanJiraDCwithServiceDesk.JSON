@@ -1,0 +1,20 @@
+// Endpoint used in the youtube video: http://localhost:8080/rest/api/2/issue/
+//use it as a POST
+
+
+{
+    "fields": {
+       "project":
+       {
+          "id": "10200" //project ID (found in Details)
+       },
+       "summary": "Request created via REST API from Postman For Youtube",
+        "description": "TEST DESCRIPTION",
+        "customfield_10800" : { "name":"void.admin" }, //single user field
+        "customfield_10700" : [{"key" : "TESTITSM-10"}], //asset field
+        "customfield_10403" : "vsd/18d87fae-4aa3-4a7c-85ee-96a5e4748e82", //customer request type
+       "issuetype": {
+          "id": "10202" //ID of the issue type
+       }
+   }
+}
